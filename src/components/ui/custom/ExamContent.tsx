@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "sonner";
 import AnswerTracker from "./AnswerTracker";
+import CustomButton from "./CustomButton";
 import QuestionCard, { ExamData } from "./QuestionCard";
 
 interface ExamContentProps {
@@ -77,12 +78,9 @@ export default function ExamContent({ examData }: ExamContentProps) {
           totalQuestions={examData.questions.length}
           answeredQuestions={userAnswers}
         />
-        <button
-          onClick={() => handleSubmit(false)}
-          className="w-full mt-4 bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 transition-colors"
-        >
+        <CustomButton className="w-full" onClick={() => handleSubmit(false)}>
           Submit Exam
-        </button>
+        </CustomButton>
       </div>
     </div>
   );
