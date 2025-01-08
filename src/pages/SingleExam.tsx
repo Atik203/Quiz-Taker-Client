@@ -4,7 +4,7 @@ import { ExamData } from "@/components/ui/custom/QuestionCard";
 export const examData: ExamData = {
   id: 1,
   title: "Web Development Fundamentals",
-
+  cost: 10,
   duration: 1,
   questions: [
     {

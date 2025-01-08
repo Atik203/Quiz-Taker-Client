@@ -17,6 +17,7 @@ export default function DownloadCertificate() {
     email: "johndoe@gmail.com",
     title: "Web Development Fundamentals",
     scorePercentage,
+    cost: 10,
   };
 
   const handlePaymentComplete = () => {
@@ -34,10 +35,24 @@ export default function DownloadCertificate() {
             <h2 className="text-2xl font-semibold text-green-700 mb-4">
               {userData.title}
             </h2>
-            <p className="text-gray-600 mb-4">
-              Congratulations, {userData.name}! You've successfully completed
-              the exam with a score of {userData.scorePercentage}%.
+            <p className="text-gray-600 mb-2">
+              Congratulations,
+              <span className="font-semibold text-green-700">
+                {userData.name}
+              </span>
+              !! You've successfully completed the exam with a score of{" "}
+              <span className="font-semibold text-green-700">
+                {userData.scorePercentage}%.
+              </span>
             </p>
+            <p className="text-gray-600">
+              To get your certificate, please complete the payment of{" "}
+              <span className="font-semibold text-green-700">
+                {" "}
+                ${userData.cost}
+              </span>
+            </p>
+
             {!isPaid ? (
               <PaymentMethods onPaymentComplete={handlePaymentComplete} />
             ) : (

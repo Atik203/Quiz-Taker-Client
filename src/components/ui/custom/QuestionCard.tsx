@@ -10,6 +10,7 @@ export interface ExamData {
   title: string;
   questions: Question[];
   duration: number;
+  cost: number;
 }
 
 interface QuestionCardProps {
