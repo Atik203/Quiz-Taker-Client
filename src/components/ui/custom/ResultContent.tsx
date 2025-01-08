@@ -26,7 +26,9 @@ export default function ResultsContent({
         </div>
         <div>
           <Link
-            to={`/exam/1/certificate?answers=${userAnswers}`}
+            to={`/exam/1/certificate?scorePercentage=${
+              (score / examData.questions.length) * 100
+            }`}
             target="_blank"
           >
             <CustomButton> Download Certificate</CustomButton>
