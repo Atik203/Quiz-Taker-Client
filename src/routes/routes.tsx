@@ -1,6 +1,7 @@
 import CustomButton from "@/components/ui/custom/CustomButton";
 import About from "@/pages/About";
 import Contact from "@/pages/Contact";
+import ExamResult from "@/pages/ExamResult";
 import Exams from "@/pages/Exams";
 import Home from "@/pages/Home";
 import Register from "@/pages/Register";
@@ -39,10 +40,7 @@ const router = createBrowserRouter([
         path: "contact-us",
         element: <Contact />,
       },
-      {
-        path: "exam/1",
-        element: <SingleExam />,
-      },
+
       {
         path: "/login",
         element: <Login />,
@@ -53,7 +51,14 @@ const router = createBrowserRouter([
       },
     ],
   },
-
+  {
+    path: "exam/1/result",
+    element: <ExamResult />,
+  },
+  {
+    path: "exam/1",
+    element: <SingleExam />,
+  },
   // {
   //   path: "/admin",
   //   element: <AdminLayout />,
