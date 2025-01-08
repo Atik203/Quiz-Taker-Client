@@ -17,10 +17,16 @@ export default function ResultsContent({
 
   return (
     <>
-      <div className="bg-gray-50 rounded-lg shadow-md p-6 mb-8">
-        <h2 className="text-2xl font-semibold mb-4">
-          Your Score: {score} / {examData.questions.length}
-        </h2>
+      <div className="bg-gray-50 flex flex-col md:flex-row  justify-between rounded-lg shadow-md p-6 mb-8">
+        <div>
+          <h1 className="text-2xl font-semibold mb-4">{examData.title}</h1>
+          <h2 className="text-2xl font-semibold mb-4">
+            Your Score: {score} / {examData.questions.length}
+          </h2>
+        </div>
+        <div>
+          <CustomButton> Download Certificate</CustomButton>
+        </div>
       </div>
       <div className="space-y-6 max-w-7xl mx-auto py-16">
         {examData.questions.map((question, index) => (
