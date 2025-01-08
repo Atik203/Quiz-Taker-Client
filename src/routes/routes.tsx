@@ -3,6 +3,8 @@ import About from "@/pages/About";
 import Contact from "@/pages/Contact";
 import Exams from "@/pages/Exams";
 import Home from "@/pages/Home";
+import Register from "@/pages/Register";
+import SingleExam from "@/pages/SingleExam";
 import { createBrowserRouter, Link } from "react-router-dom";
 import App from "../App";
 import Login from "./../pages/Login";
@@ -37,12 +39,21 @@ const router = createBrowserRouter([
         path: "contact-us",
         element: <Contact />,
       },
+      {
+        path: "exam/1",
+        element: <SingleExam />,
+      },
+      {
+        path: "/login",
+        element: <Login />,
+      },
+      {
+        path: "/register",
+        element: <Register />,
+      },
     ],
   },
-  {
-    path: "/login",
-    element: <Login />,
-  },
+
   // {
   //   path: "/admin",
   //   element: <AdminLayout />,

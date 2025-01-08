@@ -15,8 +15,6 @@ const featuredExams = [
   { id: 4, name: "Artificial Intelligence", duration: 80 },
   { id: 5, name: "Cyber Security", duration: 70 },
   { id: 6, name: "Cloud Computing", duration: 85 },
-  // { id: 7, name: "DevOps Essentials", duration: 65 },
-  // { id: 8, name: "Blockchain Basics", duration: 95 },
 ];
 
 export default function Home() {
@@ -51,7 +49,7 @@ export default function Home() {
               </div>
               <CardFooter>
                 <Link
-                  to={`/exam/${exam.id}`}
+                  to={`/exam/1`}
                   className="inline-flex items-center justify-center w-full px-4 py-2 bg-[hsl(var(--primary))] text-[hsl(var(--primary-foreground))] rounded-md hover:bg-[hsl(var(--primary))] transition-colors"
                 >
                   Start Exam
@@ -64,7 +62,7 @@ export default function Home() {
 
         <div className="text-center">
           <Link
-            to="/exams"
+            to="/login"
             className="inline-flex items-center justify-center px-6 py-3 bg-[hsl(var(--primary))] text-[hsl(var(--primary-foreground))] rounded-md hover:bg-[hsl(var(--primary))] transition-colors text-lg font-semibold"
           >
             Show All Exams

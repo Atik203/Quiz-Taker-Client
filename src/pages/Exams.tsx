@@ -78,7 +78,7 @@ export default function Exams() {
               </div>
               <CardFooter>
                 <Link
-                  to={`/exam/${exam.id}`}
+                  to={`/login`}
                   className="inline-flex items-center justify-center w-full px-4 py-2 bg-[hsl(var(--primary))] text-[hsl(var(--primary-foreground))] rounded-md hover:bg-[hsl(var(--primary))] transition-colors"
                 >
                   Start Exam
