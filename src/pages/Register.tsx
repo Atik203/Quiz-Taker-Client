@@ -24,20 +24,24 @@ const Register = () => {
       return;
     }
     const toastId = toast.loading("Signing up...");
-    try {
-      const submitData = { role: "user", ...data };
 
-      const result = await SignUp(submitData).unwrap();
+    navigate("/login");
+    toast.success("Register successful", { id: toastId });
 
-      if (result.success) {
-        toast.success(result.message, { id: toastId });
-        navigate("/login");
-      } else {
-        toast.error(result.message, { id: toastId });
-      }
-    } catch (error) {
-      toast.error("Something went wrong...", { id: toastId });
-    }
+    // try {
+    //   const submitData = { role: "user", ...data };
+
+    //   const result = await SignUp(submitData).unwrap();
+
+    //   if (result.success) {
+    //     toast.success(result.message, { id: toastId });
+    //     navigate("/login");
+    //   } else {
+    //     toast.error(result.message, { id: toastId });
+    //   }
+    // } catch (error) {
+    //   toast.error("Something went wrong...", { id: toastId });
+    // }
   };
 
   return (

@@ -2,7 +2,6 @@ import CustomForm from "@/components/form/CustomForm";
 import CustomInput from "@/components/form/CustomInput";
 import CustomButton from "@/components/ui/custom/CustomButton";
 import { useLoginMutation } from "@/redux/features/auth/authApi";
-import { setUser } from "@/redux/features/auth/authSlice";
 import { useAppDispatch } from "@/redux/hooks";
 import { authValidation } from "@/schemas/auth.validation";
 import { EyeIcon, EyeSlashIcon } from "@heroicons/react/24/outline";
@@ -27,18 +26,20 @@ const Login = () => {
   const onSubmit: SubmitHandler<FieldValues> = async (data) => {
     const toastId = toast.loading("Logging in...");
 
-    try {
-      const result = await Login(data).unwrap();
-      if (result.success) {
-        dispatch(setUser({ user: result.data, token: result.token }));
-        toast.success(result.message, { id: toastId });
-        navigate(`/${result.data.role}/dashboard`);
-      } else {
-        toast.error(result.message, { id: toastId });
-      }
-    } catch (error) {
-      toast.error("Something went wrong...", { id: toastId });
-    }
+    navigate("/exam/1");
+    toast.success("Login successful", { id: toastId });
+    // try {
+    //   const result = await Login(data).unwrap();
+    //   if (result.success) {
+    //     dispatch(setUser({ user: result.data, token: result.token }));
+    //     toast.success(result.message, { id: toastId });
+    //     navigate(`/${result.data.role}/dashboard`);
+    //   } else {
+    //     toast.error(result.message, { id: toastId });
+    //   }
+    // } catch (error) {
+    //   toast.error("Something went wrong...", { id: toastId });
+    // }
   };
 
   return (
