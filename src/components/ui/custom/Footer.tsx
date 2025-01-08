@@ -105,7 +105,7 @@ export default function Footer() {
         <div className="xl:grid xl:grid-cols-3 xl:gap-8">
           <div className="space-y-8">
             <Link to="/" className="text-2xl font-bold text-white">
-              Quick Taker
+              Quiz Taker
             </Link>
 
             <p className="text-sm leading-6 text-white dark:text-gray-300">
@@ -205,7 +205,7 @@ export default function Footer() {
         </div>
         <div className="mt-6 border-t text-center border-gray-900/10 dark:border-gray-700 pt-4 sm:mt-8 lg:mt-8">
           <p className="text-xs leading-5 text-gray-300 dark:text-gray-500">
-            &copy; 2025 Quick Taker, Inc. All rights reserved.
+            &copy; 2025 Quiz Taker, Inc. All rights reserved.
           </p>
         </div>
       </div>
