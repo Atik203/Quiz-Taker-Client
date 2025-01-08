@@ -49,7 +49,7 @@ export default function Home() {
               </div>
               <CardFooter>
                 <Link
-                  to={`/exam/1`}
+                  to={`/login`}
                   className="inline-flex items-center justify-center w-full px-4 py-2 bg-[hsl(var(--primary))] text-[hsl(var(--primary-foreground))] rounded-md hover:bg-[hsl(var(--primary))] transition-colors"
                 >
                   Start Exam
@@ -62,7 +62,7 @@ export default function Home() {
 
         <div className="text-center">
           <Link
-            to="/login"
+            to="/exams"
             className="inline-flex items-center justify-center px-6 py-3 bg-[hsl(var(--primary))] text-[hsl(var(--primary-foreground))] rounded-md hover:bg-[hsl(var(--primary))] transition-colors text-lg font-semibold"
           >
             Show All Exams

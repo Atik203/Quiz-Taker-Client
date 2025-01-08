@@ -48,7 +48,7 @@ export default function Exams() {
   const currentExams = allExams.slice(startIndex, startIndex + ITEMS_PER_PAGE);
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-[hsl(var(--background))] to-white">
+    <div className="min-h-screen  bg-gradient-to-b from-[hsl(var(--background))] to-white">
       <main className="container mx-auto px-4 py-16">
         <section className="text-center mb-16">
           <h1 className="text-4xl md:text-6xl font-bold text-[hsl(var(--foreground))] mb-4">
