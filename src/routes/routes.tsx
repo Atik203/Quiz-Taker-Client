@@ -1,6 +1,7 @@
 import CustomButton from "@/components/ui/custom/CustomButton";
 import About from "@/pages/About";
 import Contact from "@/pages/Contact";
+import DownloadCertificate from "@/pages/DownloadCertificate";
 import ExamResult from "@/pages/ExamResult";
 import Exams from "@/pages/Exams";
 import Home from "@/pages/Home";
@@ -58,6 +59,10 @@ const router = createBrowserRouter([
   {
     path: "exam/1",
     element: <SingleExam />,
+  },
+  {
+    path: "exam/1/certificate",
+    element: <DownloadCertificate />,
   },
   // {
   //   path: "/admin",

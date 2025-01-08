@@ -25,7 +25,12 @@ export default function ResultsContent({
           </h2>
         </div>
         <div>
-          <CustomButton> Download Certificate</CustomButton>
+          <Link
+            to={`/exam/1/certificate?answers=${userAnswers}`}
+            target="_blank"
+          >
+            <CustomButton> Download Certificate</CustomButton>
+          </Link>
         </div>
       </div>
       <div className="space-y-6 max-w-7xl mx-auto py-16">
