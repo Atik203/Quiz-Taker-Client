@@ -78,14 +78,14 @@ export default function Navbar() {
               <div className="flex items-center justify-between w-full">
                 <div className="hidden lg:flex px-2 lg:px-0">
                   <Link to={"/"} className="text-2xl font-bold text-primary">
-                    Quick Taker
+                    Quiz Taker
                   </Link>
                   <MenuItemsComponent />
                 </div>
                 <div className="flex items-center space-x-1 lg:hidden">
                   <MobileMenuButton open={open} />
                   <Link to={"/"} className="text-xl font-bold text-primary">
-                    Quick Taker
+                    Quiz Taker
                   </Link>
                 </div>
                 <div className="flex items-center ml-auto">
