@@ -13,12 +13,14 @@ import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Lock, Shield } from "lucide-react";
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 
 interface PaymentMethodsProps {
   onPaymentComplete: () => void;
 }
 
 export function PaymentMethods({ onPaymentComplete }: PaymentMethodsProps) {
+  const { t } = useTranslation();
   const [selectedMethod, setSelectedMethod] = useState<string>("");
   const [isProcessing, setIsProcessing] = useState(false);
 
@@ -37,7 +39,7 @@ export function PaymentMethods({ onPaymentComplete }: PaymentMethodsProps) {
     <Card className="w-full max-w-2xl mx-auto">
       <CardHeader>
         <CardTitle className="text-2xl font-bold text-green-700">
-          Payment Methods
+          {t("exams.payment_methods")}
         </CardTitle>
         <CardDescription>Choose your preferred payment method</CardDescription>
       </CardHeader>
@@ -173,7 +175,9 @@ export function PaymentMethods({ onPaymentComplete }: PaymentMethodsProps) {
           disabled={!selectedMethod || isProcessing}
           className="w-full bg-green-600 hover:bg-green-700 text-white"
         >
-          {isProcessing ? "Processing..." : "Pay and Download Certificate"}
+          {isProcessing
+            ? "Processing..."
+            : `${t("exams.pay_and_download_certificate")}`}
         </Button>
       </CardFooter>
     </Card>
