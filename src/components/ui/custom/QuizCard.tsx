@@ -6,9 +6,12 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { ArrowRightIcon, ClockIcon } from "lucide-react";
+import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 
 const QuizCard = ({ exam }) => {
+  const { t } = useTranslation();
+
   return (
     <Card
       key={exam.id}
@@ -30,7 +33,7 @@ const QuizCard = ({ exam }) => {
           to={`/exam/1`}
           className="inline-flex items-center justify-center w-full px-4 py-2 bg-[hsl(var(--primary))] text-[hsl(var(--primary-foreground))] rounded-md hover:bg-[hsl(var(--primary))] transition-colors"
         >
-          Start Exam
+          {t("start_exam")}
           <ArrowRightIcon className="w-4 h-4 ml-2" />
         </Link>
       </CardFooter>

@@ -9,6 +9,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useState } from "react";
 import { Helmet } from "react-helmet-async";
 import { FieldValues, SubmitHandler } from "react-hook-form";
+import { useTranslation } from "react-i18next";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "sonner";
 
@@ -18,6 +19,7 @@ const defaultValues = {
 };
 
 const Login = () => {
+  const { t } = useTranslation();
   const [showPassword, setShowPassword] = useState(false);
   const [Login] = useLoginMutation();
   const dispatch = useAppDispatch();
@@ -45,22 +47,22 @@ const Login = () => {
   return (
     <div className="min-h-screen py-16">
       <Helmet>
-        <title>Login</title>
+        <title>{t("menu.login")}</title>
       </Helmet>
       <div className="flex flex-1">
         <div className="flex flex-1 flex-col justify-center px-2 py-16">
           <div className="mx-auto w-full max-w-sm lg:w-96">
             <div>
               <h2 className="mt-4 text-2xl font-bold leading-9 tracking-tight text-gray-900 dark:text-gray-100">
-                Login in to your account
+                {t("login.title")}
               </h2>
               <p className="mt-2 text-sm leading-6 text-gray-500 dark:text-gray-400">
-                Don't have a account register now?{" "}
+                {t("login.no_account")}{" "}
                 <Link
                   to={"/register"}
                   className="font-semibold hover:underline text-indigo-600 hover:text-indigo-500 dark:text-indigo-400 dark:hover:text-indigo-300"
                 >
-                  Register
+                  {t("login.register")}
                 </Link>
               </p>
             </div>
@@ -71,11 +73,11 @@ const Login = () => {
                   onSubmit={onSubmit}
                   resolver={zodResolver(authValidation.loginValidationSchema)}
                 >
-                  <CustomInput name="email" label="email" />
+                  <CustomInput name="email" label={t("login.email")} />
                   <div className="relative w-full">
                     <CustomInput
                       name="password"
-                      label="Password"
+                      label={t("login.password")}
                       type={showPassword ? "text" : "password"}
                     />
                     <div
@@ -102,7 +104,7 @@ const Login = () => {
                         htmlFor="remember-me"
                         className="ml-3 block text-sm leading-6 text-gray-700 dark:text-gray-300"
                       >
-                        Remember me
+                        {t("login.remember_me")}
                       </label>
                     </div>
 
@@ -111,13 +113,13 @@ const Login = () => {
                         href="#"
                         className="font-semibold text-indigo-600 hover:text-indigo-500 dark:text-indigo-400 dark:hover:text-indigo-300"
                       >
-                        Forgot password?
+                        {t("login.forgot_password")}
                       </a>
                     </div>
                   </div>
                   <div>
                     <CustomButton className="w-full" type="submit">
-                      Login
+                      {t("login.login_button")}
                     </CustomButton>
                   </div>
                 </CustomForm>
@@ -125,19 +127,19 @@ const Login = () => {
             </div>
             <div className="mt-4">
               <p className="mt-2 text-sm leading-6 text-gray-500 dark:text-gray-400">
-                By signing in, you agree to our{" "}
+                {t("login.agree")}{" "}
                 <Link
                   to={"/privacy-policy"}
                   className="font-semibold text-indigo-600 hover:text-indigo-500 dark:text-indigo-400 dark:hover:text-indigo-300"
                 >
-                  Privacy Policy
+                  {t("login.privacy_policy")}
                 </Link>{" "}
                 and{" "}
                 <Link
                   to={"/terms-conditions"}
                   className="font-semibold text-indigo-600 hover:text-indigo-500 dark:text-indigo-400 dark:hover:text-indigo-300"
                 >
-                  Terms of Service
+                  {t("login.terms_conditions")}
                 </Link>
                 .
               </p>

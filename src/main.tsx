@@ -11,6 +11,7 @@ import { HelmetProvider } from "react-helmet-async";
 import { Provider } from "react-redux";
 import { RouterProvider } from "react-router-dom";
 import { Toaster } from "sonner";
+import "./i18n.ts";
 import "./index.css";
 import { store } from "./redux/store.ts";
 import router from "./routes/routes.tsx";

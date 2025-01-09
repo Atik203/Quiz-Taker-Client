@@ -6,6 +6,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { ArrowRightIcon, ClockIcon } from "lucide-react";
+import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 
 const featuredExams = [
@@ -18,15 +19,17 @@ const featuredExams = [
 ];
 
 export default function Home() {
+  const { t } = useTranslation();
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-[hsl(var(--background))] to-white">
       <main className="container mx-auto px-4 py-16">
         <section className="text-center mb-16">
           <h1 className="text-4xl md:text-6xl font-bold text-[hsl(var(--foreground))] mb-4">
-            Master Your Skills with Quiz Taker
+            {t("home.title")}
           </h1>
           <p className="text-xl text-[hsl(var(--foreground))] mb-8">
-            Take expert-curated exams and boost your knowledge in various fields
+            {t("home.description")}
           </p>
         </section>
 
@@ -44,7 +47,9 @@ export default function Home() {
                 </CardHeader>
                 <CardContent className="flex items-center text-[hsl(var(--card-foreground))] mb-6">
                   <ClockIcon className="w-5 h-5 mr-2" />
-                  <span>{exam.duration} minutes</span>
+                  <span>
+                    {exam.duration} {t("minutes")}
+                  </span>
                 </CardContent>
               </div>
               <CardFooter>
@@ -52,7 +57,7 @@ export default function Home() {
                   to={`/login`}
                   className="inline-flex items-center justify-center w-full px-4 py-2 bg-[hsl(var(--primary))] text-[hsl(var(--primary-foreground))] rounded-md hover:bg-[hsl(var(--primary))] transition-colors"
                 >
-                  Start Exam
+                  {t("start_exam")}
                   <ArrowRightIcon className="w-4 h-4 ml-2" />
                 </Link>
               </CardFooter>
@@ -65,7 +70,7 @@ export default function Home() {
             to="/exams"
             className="inline-flex items-center justify-center px-6 py-3 bg-[hsl(var(--primary))] text-[hsl(var(--primary-foreground))] rounded-md hover:bg-[hsl(var(--primary))] transition-colors text-lg font-semibold"
           >
-            Show All Exams
+            {t("home.show_all_exams")}
             <ArrowRightIcon className="w-5 h-5 ml-2" />
           </Link>
         </div>
