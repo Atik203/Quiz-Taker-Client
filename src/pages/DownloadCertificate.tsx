@@ -5,6 +5,7 @@ import { Certificate } from "@/components/ui/custom/Certificate";
 import { PaymentMethods } from "@/components/ui/custom/PaymentMethods";
 import { PDFDownloadLink } from "@react-pdf/renderer";
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 import { useSearchParams } from "react-router-dom";
 
 export default function DownloadCertificate() {
@@ -24,11 +25,13 @@ export default function DownloadCertificate() {
     setIsPaid(true);
   };
 
+  const { t } = useTranslation();
+
   return (
     <div className="min-h-screen bg-green-50 py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-3xl mx-auto">
         <h1 className="text-4xl font-bold text-center text-green-800 mb-8">
-          Exam Certificate
+          {t("exams.exam_certificate")}
         </h1>
         <div className="bg-white shadow-xl rounded-lg overflow-hidden">
           <div className="p-6">
@@ -75,7 +78,7 @@ export default function DownloadCertificate() {
                       <>Loading document...</>
                     ) : (
                       <Button className="bg-green-600 hover:bg-green-700 text-white">
-                        Download Certificate
+                        {t("exams.download_certificate")}
                       </Button>
                     )
                   }
