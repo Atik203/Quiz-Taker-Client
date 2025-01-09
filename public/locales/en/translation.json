@@ -1,0 +1,87 @@
+{
+  "menu": {
+    "home": "Home",
+    "about": "About Us",
+    "contact": "Contact Us",
+    "login": "Login",
+    "register": "Register",
+    "logout": "Logout",
+    "exams": "Exams",
+    "dashboard": "Dashboard"
+  },
+  "home": {
+    "title": "Master Your Skills with Quiz Taker",
+    "description": "Take expert-curated exams and boost your knowledge in various fields.",
+    "show_all_exams": "Show All Exams"
+  },
+
+  "start_exam": "Start Exam",
+  "minutes": "minutes",
+  "exams": {
+    "title": "All Exams",
+    "description": "Browse through all available exams and start your learning journey.",
+    "no_exams": "No exams available at the moment.",
+    "submit_exam": "Submit Exam",
+    "time_left": "Time Left",
+    "answer_tracker": "Answer Tracker",
+    "exam_results": "Exam Results",
+    "your_score": "Your Score",
+    "download_certificate": "Download Certificate",
+    "return_home": "Return Home",
+    "exam_certificate": "Exam Certificate",
+    "payment_methods": "Payment Methods",
+    "pay_and_download_certificate": "Pay and Download Certificate"
+  },
+  "login": {
+    "title": "Login to your account",
+    "no_account": "Don't have an account? Register now",
+    "register": "Register",
+    "email": "Email",
+    "password": "Password",
+    "remember_me": "Remember me",
+    "forgot_password": "Forgot password?",
+    "login_button": "Login",
+    "privacy_policy": "Privacy Policy",
+    "terms_conditions": "Terms of Service",
+    "agree": "By signing in, you agree to our"
+  },
+  "register": {
+    "title": "Register your account",
+    "have_account": "Already have an account?",
+    "login": "Login",
+    "full_name": "Full Name",
+    "email": "Email",
+    "password": "Password",
+    "confirm_password": "Confirm Password",
+    "agree_terms": "I agree to the",
+    "terms_conditions": "Terms and Conditions",
+    "register_button": "Register",
+    "privacy_policy": "Privacy Policy",
+    "terms_service": "Terms of Service",
+    "agree": "By registering, you agree to our"
+  },
+  "footer": {
+    "solutions": "Solutions",
+    "support": "Support",
+    "company": "Company",
+    "legal": "Legal",
+    "marketing": "Marketing",
+    "analytics": "Analytics",
+    "commerce": "Commerce",
+    "insights": "Insights",
+    "pricing": "Pricing",
+    "documentation": "Documentation",
+    "guides": "Guides",
+    "api_status": "API Status",
+    "about": "About",
+    "blog": "Blog",
+    "jobs": "Jobs",
+    "partners": "Partners",
+    "claim": "Claim",
+    "privacy": "Privacy",
+    "terms_conditions": "Terms and Conditions",
+    "policy": "Policy",
+    "social_message": "Making the world a better place through constructing elegant hierarchies.",
+    "copyright": "© 2025 Quiz Taker, Inc. All rights reserved."
+  }
+}

@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 import CustomButton from "./CustomButton";
 import { ExamData } from "./QuestionCard";
@@ -14,14 +15,14 @@ export default function ResultsContent({
   const score = userAnswers.reduce((acc, answer, index) => {
     return acc + (answer === examData.questions[index].correctAnswer ? 1 : 0);
   }, 0);
-
+  const { t } = useTranslation();
   return (
     <>
       <div className="bg-gray-50 flex flex-col md:flex-row  justify-between rounded-lg shadow-md p-6 mb-8">
         <div>
           <h1 className="text-2xl font-semibold mb-4">{examData.title}</h1>
           <h2 className="text-2xl font-semibold mb-4">
-            Your Score: {score} / {examData.questions.length}
+            {t("exams.your_score")}: {score} / {examData.questions.length}
           </h2>
         </div>
         <div>
@@ -31,7 +32,7 @@ export default function ResultsContent({
             }`}
             target="_blank"
           >
-            <CustomButton> Download Certificate</CustomButton>
+            <CustomButton>{t("exams.download_certificate")} </CustomButton>
           </Link>
         </div>
       </div>
@@ -69,7 +70,7 @@ export default function ResultsContent({
       </div>
       <div className="text-center">
         <Link to={"/"}>
-          <CustomButton>Return to Home</CustomButton>
+          <CustomButton>{t("exams.return_home")}</CustomButton>
         </Link>
       </div>
     </>

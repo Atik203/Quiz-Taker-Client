@@ -1,0 +1,87 @@
+{
+  "menu": {
+    "home": "ホーム",
+    "about": "私たちに関しては",
+    "contact": "お問い合わせ",
+    "login": "ログイン",
+    "register": "登録",
+    "logout": "ログアウト",
+    "exams": "試験",
+    "dashboard": "ダッシュボード"
+  },
+  "home": {
+    "title": "クイズテイカーでスキルをマスターする",
+    "description": "専門家が厳選した試験を受けて、さまざまな分野の知識を向上させましょう。",
+    "show_all_exams": "すべての試験を表示"
+  },
+
+  "start_exam": "試験を開始",
+  "minutes": "分",
+  "exams": {
+    "title": "すべての試験",
+    "description": "利用可能なすべての試験を閲覧して、学習の旅を始めましょう。",
+    "no_exams": "現在利用可能な試験はありません。",
+    "submit_exam": "試験を提出",
+    "time_left": "残り時間",
+    "answer_tracker": "回答トラッカー",
+    "exam_results": "試験結果",
+    "your_score": "あなたのスコア",
+    "download_certificate": "証明書をダウンロード",
+    "return_home": "ホームに戻る",
+    "exam_certificate": "試験証明書",
+    "payment_methods": "支払い方法",
+    "pay_and_download_certificate": "支払いと証明書のダウンロード"
+  },
+  "login": {
+    "title": "アカウントにログイン",
+    "no_account": "アカウントをお持ちではありませんか？今すぐ登録",
+    "register": "登録",
+    "email": "メール",
+    "password": "パスワード",
+    "remember_me": "私を覚えてますか",
+    "forgot_password": "パスワードをお忘れですか？",
+    "login_button": "ログイン",
+    "privacy_policy": "プライバシーポリシー",
+    "terms_conditions": "利用規約",
+    "agree": "サインインすることにより、あなたは私たちの"
+  },
+  "register": {
+    "title": "アカウントを登録する",
+    "have_account": "すでにアカウントをお持ちですか？",
+    "login": "ログイン",
+    "full_name": "フルネーム",
+    "email": "メール",
+    "password": "パスワード",
+    "confirm_password": "パスワードを認証する",
+    "agree_terms": "私は同意します",
+    "terms_conditions": "利用規約",
+    "register_button": "登録",
+    "privacy_policy": "プライバシーポリシー",
+    "terms_service": "利用規約",
+    "agree": "登録することにより、あなたは私たちの"
+  },
+  "footer": {
+    "solutions": "ソリューション",
+    "support": "サポート",
+    "company": "会社",
+    "legal": "法的",
+    "marketing": "マーケティング",
+    "analytics": "分析",
+    "commerce": "商業",
+    "insights": "洞察",
+    "pricing": "価格設定",
+    "documentation": "ドキュメント",
+    "guides": "ガイド",
+    "api_status": "APIステータス",
+    "about": "約",
+    "blog": "ブログ",
+    "jobs": "仕事",
+    "partners": "パートナー",
+    "claim": "クレーム",
+    "privacy": "プライバシー",
+    "terms_conditions": "利用規約",
+    "policy": "ポリシー",
+    "social_message": "エレガントな階層を構築することで、世界をより良い場所にします。",
+    "copyright": "© 2025 クイズテイカー株式会社。全著作権所有。"
+  }
+}
