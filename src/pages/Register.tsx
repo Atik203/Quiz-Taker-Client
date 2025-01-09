@@ -9,10 +9,12 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useState } from "react";
 import { Helmet } from "react-helmet-async";
 import { FieldValues, SubmitHandler } from "react-hook-form";
+import { useTranslation } from "react-i18next";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "sonner";
 
 const Register = () => {
+  const { t } = useTranslation();
   const [showPassword, setShowPassword] = useState(false);
   const [agreeTerms, setAgreeTerms] = useState(false);
   const navigate = useNavigate();
@@ -20,13 +22,13 @@ const Register = () => {
 
   const onSubmit: SubmitHandler<FieldValues> = async (data) => {
     if (!agreeTerms) {
-      toast.error("Please agree to the terms and conditions");
+      toast.error(t("register.agree_terms"));
       return;
     }
-    const toastId = toast.loading("Signing up...");
+    const toastId = toast.loading(t("register.signing_up"));
 
     navigate("/login");
-    toast.success("Register successful", { id: toastId });
+    toast.success(t("register.success"), { id: toastId });
 
     // try {
     //   const submitData = { role: "user", ...data };
@@ -47,21 +49,21 @@ const Register = () => {
   return (
     <div className="px-4 sm:px-6 lg:px-8">
       <Helmet>
-        <title>Sign Up</title>
+        <title>{t("menu.register")}</title>
       </Helmet>
       <div className="px-2 py-12">
         <div className="mx-auto w-full max-w-4xl">
           <div className="text-center">
             <h2 className="mt-4 text-2xl font-bold leading-9 tracking-tight text-gray-900 dark:text-gray-100">
-              Register your account
+              {t("register.title")}
             </h2>
             <p className="mt-2 text-sm leading-6 text-gray-500 dark:text-gray-400">
-              Already have an account?{" "}
+              {t("register.have_account")}{" "}
               <Link
                 to={"/login"}
                 className="font-semibold hover:underline text-indigo-600 hover:text-indigo-500 dark:text-indigo-400 dark:hover:text-indigo-300"
               >
-                Login
+                {t("register.login")}
               </Link>
             </p>
           </div>
@@ -70,13 +72,17 @@ const Register = () => {
               onSubmit={onSubmit}
               resolver={zodResolver(authValidation.signUpValidationSchema)}
             >
-              <CustomInput name="name" label="Full Name" />
-              <CustomInput name="email" label="Email" type="email" />
+              <CustomInput name="name" label={t("register.full_name")} />
+              <CustomInput
+                name="email"
+                label={t("register.email")}
+                type="email"
+              />
 
               <div className="relative w-full">
                 <CustomInput
                   name="password"
-                  label="Password"
+                  label={t("register.password")}
                   type={showPassword ? "text" : "password"}
                 />
                 <div
@@ -93,7 +99,7 @@ const Register = () => {
               </div>
               <CustomInput
                 name="confirmPassword"
-                label="Confirm Password"
+                label={t("register.confirm_password")}
                 type="password"
               />
 
@@ -110,12 +116,12 @@ const Register = () => {
                     htmlFor="remember-me"
                     className="ml-3 block text-sm leading-6 text-gray-700 dark:text-gray-300"
                   >
-                    I agree to the{" "}
+                    {t("register.agree_terms")}{" "}
                     <Link
                       to={"/terms-conditions"}
                       className="font-semibold text-indigo-600 hover:text-indigo-500 dark:text-indigo-400 dark:hover:text-indigo-300"
                     >
-                      Terms and Conditions
+                      {t("register.terms_conditions")}
                     </Link>
                   </label>
                 </div>
@@ -127,26 +133,26 @@ const Register = () => {
                   className="w-full sm:w-96"
                   type="submit"
                 >
-                  Register
+                  {t("register.register_button")}
                 </CustomButton>
               </div>
             </CustomForm>
           </div>
           <div className="mt-4 w-full sm:w-96 text-center mx-auto">
             <p className="mt-2 text-sm leading-6 text-gray-500 dark:text-gray-400">
-              By registering, you agree to our{" "}
+              {t("register.agree")}{" "}
               <Link
                 to={"/privacy-policy"}
                 className="font-semibold text-indigo-600 hover:text-indigo-500 dark:text-indigo-400 dark:hover:text-indigo-300"
               >
-                Privacy Policy
+                {t("register.privacy_policy")}
               </Link>{" "}
               and{" "}
               <Link
                 to={"/terms-conditions"}
                 className="font-semibold text-indigo-600 hover:text-indigo-500 dark:text-indigo-400 dark:hover:text-indigo-300"
               >
-                Terms of Service
+                {t("register.terms_service")}
               </Link>
               .
             </p>

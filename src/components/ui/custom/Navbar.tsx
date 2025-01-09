@@ -13,6 +13,7 @@ import { Link, NavLink } from "react-router-dom";
 import { logout } from "@/redux/features/auth/authSlice";
 import { useAppDispatch } from "@/redux/hooks";
 import { Fragment } from "react";
+import { useTranslation } from "react-i18next";
 import { toast } from "sonner";
 import CustomButton from "./CustomButton";
 import MobileMenuButton from "./MobileMenuButton";
@@ -21,40 +22,25 @@ function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(" ");
 }
 
-const menuItems = [
-  { name: "Home", to: "/" },
-  { name: "Exams", to: "/exams" },
-  { name: "About Us", to: "/about-us" },
-  { name: "Contact Us", to: "/contact-us" },
-];
+const Navbar = () => {
+  const { t, i18n } = useTranslation();
 
-const userItems = [
-  { name: "Profile", to: "profile" },
-  { name: "Dashboard", to: "dashboard" },
-];
+  const changeLanguage = (lng: string) => {
+    i18n.changeLanguage(lng);
+  };
 
-const MenuItemsComponent = () => (
-  <div className="hidden lg:ml-6 lg:flex lg:space-x-8">
-    {menuItems.map((item) => (
-      <NavLink
-        key={item.name}
-        to={item.to}
-        className={({ isActive }: { isActive: boolean }) =>
-          classNames(
-            isActive
-              ? "border-primary text-green-700"
-              : "border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700",
-            "inline-flex items-center border-b-2 px-1 pt-1 text-sm font-medium dark:text-white dark:hover:text-gray-300"
-          )
-        }
-      >
-        {item.name}
-      </NavLink>
-    ))}
-  </div>
-);
+  const menuItems = [
+    { name: t("menu.home"), to: "/" },
+    { name: t("menu.exams"), to: "/exams" },
+    { name: t("menu.about"), to: "/about-us" },
+    { name: t("menu.contact"), to: "/contact-us" },
+  ];
 
-export default function Navbar() {
+  const userItems = [
+    { name: t("menu.profile"), to: "profile" },
+    { name: t("menu.dashboard"), to: "dashboard" },
+  ];
+
   //   const user = useAppSelector(useCurrentUser);
   const user = null;
 
@@ -68,6 +54,27 @@ export default function Navbar() {
       toast.success("Logged out successfully", { id: toastId });
     }, 500);
   };
+
+  const MenuItemsComponent = () => (
+    <div className="hidden lg:ml-6 lg:flex lg:space-x-8">
+      {menuItems.map((item) => (
+        <NavLink
+          key={item.name}
+          to={item.to}
+          className={({ isActive }: { isActive: boolean }) =>
+            classNames(
+              isActive
+                ? "border-primary text-green-700"
+                : "border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700",
+              "inline-flex items-center border-b-2 px-1 pt-1 text-sm font-medium dark:text-white dark:hover:text-gray-300"
+            )
+          }
+        >
+          {item.name}
+        </NavLink>
+      ))}
+    </div>
+  );
 
   return (
     <Disclosure as="nav" className="px-0 lg:px-4">
@@ -144,7 +151,7 @@ export default function Navbar() {
                               onClick={handleLogout}
                               className="pl-4 py-2 text-sm text-red-600 dark:text-red-400 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-700"
                             >
-                              Logout
+                              {t("menu.logout")}
                             </p>
                           </MenuItem>
                         </MenuItems>
@@ -153,10 +160,34 @@ export default function Navbar() {
                   ) : (
                     <div>
                       <Link to="/login">
-                        <CustomButton> Login </CustomButton>
+                        <CustomButton> {t("menu.login")} </CustomButton>
                       </Link>
                     </div>
                   )}
+                  <div className="flex px-2 items-center gap-2 mx-auto">
+                    <div className="flex px-2 items-center gap-2 mx-auto">
+                      <button
+                        onClick={() => changeLanguage("en")}
+                        className={`px-3 py-1 rounded ${
+                          i18n.language === "en"
+                            ? "bg-red-500 text-white"
+                            : "bg-gray-200 text-gray-800"
+                        }`}
+                      >
+                        EN
+                      </button>
+                      <button
+                        onClick={() => changeLanguage("ja")}
+                        className={`px-3 py-1 rounded ${
+                          i18n.language === "ja"
+                            ? "bg-red-500 text-white"
+                            : "bg-gray-200 text-gray-800"
+                        }`}
+                      >
+                        JA
+                      </button>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -196,7 +227,7 @@ export default function Navbar() {
                     to={"/dashboard/home"}
                     className="block text-base font-medium text-gray-500 hover:bg-gray-100 hover:text-gray-800"
                   >
-                    Dashboard
+                    {t("menu.dashboard")}
                   </DisclosureButton>
                 </div>
               </div>
@@ -206,4 +237,6 @@ export default function Navbar() {
       )}
     </Disclosure>
   );
-}
+};
+
+export default Navbar;

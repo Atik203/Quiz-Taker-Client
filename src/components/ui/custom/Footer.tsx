@@ -1,31 +1,32 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
+import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 
 const navigation = {
   solutions: [
-    { name: "Marketing", href: "#" },
-    { name: "Analytics", href: "#" },
-    { name: "Commerce", href: "#" },
-    { name: "Insights", href: "#" },
+    { name: "footer.marketing", href: "#" },
+    { name: "footer.analytics", href: "#" },
+    { name: "footer.commerce", href: "#" },
+    { name: "footer.insights", href: "#" },
   ],
   support: [
-    { name: "Pricing", href: "#" },
-    { name: "Documentation", href: "#" },
-    { name: "Guides", href: "#" },
-    { name: "API Status", href: "#" },
+    { name: "footer.pricing", href: "#" },
+    { name: "footer.documentation", href: "#" },
+    { name: "footer.guides", href: "#" },
+    { name: "footer.api_status", href: "#" },
   ],
   company: [
-    { name: "About", href: "#" },
-    { name: "Blog", href: "#" },
-    { name: "Jobs", href: "#" },
-    { name: "Partners", href: "#" },
+    { name: "footer.about", href: "#" },
+    { name: "footer.blog", href: "#" },
+    { name: "footer.jobs", href: "#" },
+    { name: "footer.partners", href: "#" },
   ],
   legal: [
-    { name: "Claim", href: "/" },
-    { name: "Privacy", href: "/privacy-policy" },
-    { name: "Terms and Conditions", href: "/terms-conditions" },
-    { name: "Policy", href: "/privacy-policy" },
+    { name: "footer.claim", href: "#" },
+    { name: "footer.privacy", href: "#" },
+    { name: "footer.terms_conditions", href: "#" },
+    { name: "footer.policy", href: "#" },
   ],
   social: [
     {
@@ -93,6 +94,8 @@ const navigation = {
 };
 
 export default function Footer() {
+  const { t } = useTranslation();
+
   return (
     <footer
       className="bg-accent-foreground dark:bg-gray-800"
@@ -109,8 +112,7 @@ export default function Footer() {
             </Link>
 
             <p className="text-sm leading-6 text-white dark:text-gray-300">
-              Making the world a better place through constructing elegant
-              hierarchies.
+              {t("footer.social_message")}
             </p>
             <div className="flex space-x-6">
               {navigation.social.map((item) => (
@@ -132,7 +134,7 @@ export default function Footer() {
             <div className="md:grid md:grid-cols-2 md:gap-8">
               <div>
                 <h3 className="text-sm font-semibold leading-6 text-white dark:text-gray-300">
-                  Solutions
+                  {t("footer.solutions")}
                 </h3>
                 <ul role="list" className="mt-6 space-y-4">
                   {navigation.solutions.map((item) => (
@@ -141,7 +143,7 @@ export default function Footer() {
                         href={item.href}
                         className="text-sm leading-6 hover:underline text-white dark:text-gray-300 hover:text-primary dark:hover:text-primary-light"
                       >
-                        {item.name}
+                        {t(item.name)}
                       </a>
                     </li>
                   ))}
@@ -149,7 +151,7 @@ export default function Footer() {
               </div>
               <div className="mt-6 md:mt-0">
                 <h3 className="text-sm font-semibold leading-6 text-white dark:text-gray-300">
-                  Support
+                  {t("footer.support")}
                 </h3>
                 <ul role="list" className="mt-6 space-y-4">
                   {navigation.support.map((item) => (
@@ -158,7 +160,7 @@ export default function Footer() {
                         href={item.href}
                         className="text-sm leading-6 hover:underline text-white dark:text-gray-300 hover:text-primary dark:hover:text-primary-light"
                       >
-                        {item.name}
+                        {t(item.name)}
                       </a>
                     </li>
                   ))}
@@ -168,7 +170,7 @@ export default function Footer() {
             <div className="md:grid md:grid-cols-2 md:gap-8">
               <div>
                 <h3 className="text-sm font-semibold leading-6 text-white dark:text-gray-300">
-                  Company
+                  {t("footer.company")}
                 </h3>
                 <ul role="list" className="mt-6 space-y-4">
                   {navigation.company.map((item) => (
@@ -177,7 +179,7 @@ export default function Footer() {
                         to={item.href}
                         className="text-sm leading-6 hover:underline text-white dark:text-gray-300 hover:text-primary dark:hover:text-primary-light"
                       >
-                        {item.name}
+                        {t(item.name)}
                       </Link>
                     </li>
                   ))}
@@ -185,7 +187,7 @@ export default function Footer() {
               </div>
               <div className="mt-6 md:mt-0">
                 <h3 className="text-sm font-semibold leading-6 text-white dark:text-gray-300">
-                  Legal
+                  {t("footer.legal")}
                 </h3>
                 <ul role="list" className="mt-6 space-y-4">
                   {navigation.legal.map((item) => (
@@ -194,7 +196,7 @@ export default function Footer() {
                         href={item.href}
                         className="text-sm leading-6 hover:underline text-white dark:text-gray-300 hover:text-primary dark:hover:text-primary-light"
                       >
-                        {item.name}
+                        {t(item.name)}
                       </a>
                     </li>
                   ))}
@@ -205,7 +207,7 @@ export default function Footer() {
         </div>
         <div className="mt-6 border-t text-center border-gray-900/10 dark:border-gray-700 pt-4 sm:mt-8 lg:mt-8">
           <p className="text-xs leading-5 text-gray-300 dark:text-gray-500">
-            &copy; 2025 Quiz Taker, Inc. All rights reserved.
+            &copy; 2025 Quiz Taker, Inc. {t("footer.copyright")}
           </p>
         </div>
       </div>

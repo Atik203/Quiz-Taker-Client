@@ -15,6 +15,7 @@ import {
 } from "@/components/ui/pagination";
 import { ArrowRightIcon, ClockIcon } from "lucide-react";
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 
 const allExams = [
@@ -38,6 +39,7 @@ const allExams = [
 const ITEMS_PER_PAGE = 9;
 
 export default function Exams() {
+  const { t } = useTranslation();
   const [currentPage, setCurrentPage] = useState(1);
 
   const handlePageChange = (page: number) => {
@@ -52,10 +54,10 @@ export default function Exams() {
       <main className="container mx-auto px-4 py-16">
         <section className="text-center mb-16">
           <h1 className="text-4xl md:text-6xl font-bold text-[hsl(var(--foreground))] mb-4">
-            All Exams
+            {t("exams.title")}
           </h1>
           <p className="text-xl text-[hsl(var(--foreground))] mb-8">
-            Browse through all available exams and start your learning journey
+            {t("exams.description")}
           </p>
         </section>
 
@@ -73,7 +75,9 @@ export default function Exams() {
                 </CardHeader>
                 <CardContent className="flex items-center text-[hsl(var(--card-foreground))] mb-6">
                   <ClockIcon className="w-5 h-5 mr-2" />
-                  <span>{exam.duration} minutes</span>
+                  <span>
+                    {exam.duration} {t("minutes")}{" "}
+                  </span>
                 </CardContent>
               </div>
               <CardFooter>
@@ -81,7 +85,7 @@ export default function Exams() {
                   to={`/login`}
                   className="inline-flex items-center justify-center w-full px-4 py-2 bg-[hsl(var(--primary))] text-[hsl(var(--primary-foreground))] rounded-md hover:bg-[hsl(var(--primary))] transition-colors"
                 >
-                  Start Exam
+                  {t("start_exam")}
                   <ArrowRightIcon className="w-4 h-4 ml-2" />
                 </Link>
               </CardFooter>

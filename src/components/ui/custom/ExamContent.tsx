@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
 import { toast } from "sonner";
 import AnswerTracker from "./AnswerTracker";
@@ -10,6 +11,8 @@ interface ExamContentProps {
 }
 
 export default function ExamContent({ examData }: ExamContentProps) {
+  const { t } = useTranslation();
+
   const [userAnswers, setUserAnswers] = useState<(number | null)[]>(
     new Array(examData.questions.length).fill(null)
   );
@@ -71,7 +74,7 @@ export default function ExamContent({ examData }: ExamContentProps) {
       <div className="md:col-span-1">
         <div className="bg-white rounded-lg shadow-md p-6 mb-8">
           <h2 className="text-xl font-semibold mb-4">
-            Time Left: {formatTime(timeLeft)}
+            {t("exams.time_left")}: {formatTime(timeLeft)}
           </h2>
         </div>
         <AnswerTracker
@@ -79,7 +82,7 @@ export default function ExamContent({ examData }: ExamContentProps) {
           answeredQuestions={userAnswers}
         />
         <CustomButton className="w-full" onClick={() => handleSubmit(false)}>
-          Submit Exam
+          {t("exams.submit_exam")}
         </CustomButton>
       </div>
     </div>
